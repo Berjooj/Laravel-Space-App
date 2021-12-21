@@ -25,24 +25,6 @@ class CreateFogueteTable extends Migration {
 
             $table->timestamps();
         });
-
-        \Illuminate\Support\Facades\DB::table('foguete')->insert([
-            'nome' => 'Foguete 1',
-            'combustivel_capacidade' => 500,
-            'suprimentos_capacidade' => 500
-        ]);
-
-        \Illuminate\Support\Facades\DB::table('foguete')->insert([
-            'nome' => 'Foguete 2',
-            'combustivel_capacidade' => 1500,
-            'suprimentos_capacidade' => 1500
-        ]);
-
-        \Illuminate\Support\Facades\DB::table('foguete')->insert([
-            'nome' => 'Foguete 3',
-            'combustivel_capacidade' => 250,
-            'suprimentos_capacidade' => 50
-        ]);
     }
 
     /**

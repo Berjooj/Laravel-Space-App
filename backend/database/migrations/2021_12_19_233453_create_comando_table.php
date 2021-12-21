@@ -74,7 +74,7 @@ class CreateComandoTable extends Migration {
             'y' => 1,
             'apenas_astronauta' => true,
             'comando' => 'REABASTECER_COMBUSTIVEL',
-            'label' => 'Reabastecer combustivel (10l)'
+            'label' => 'Reabastecer combustivel (15l)'
         ]);
 
         \Illuminate\Support\Facades\DB::table('comando')->insert([

@@ -31,9 +31,5 @@ Route::patch('/missao/{id}', [\App\Http\Controllers\MissaoController::class, 'up
 Route::post('/missao', [\App\Http\Controllers\MissaoController::class, 'store']);
 Route::delete('/missao/{id}', [\App\Http\Controllers\MissaoController::class, 'destroy']);
 
-Route::get('/log', [\App\Http\Controllers\UsuarioController::class, 'index']);
-Route::get('/foguete/{id}/log', [\App\Http\Controllers\UsuarioController::class, 'showByFogueteId']);
-Route::get('/log/{id}', [\App\Http\Controllers\UsuarioController::class, 'show']);
-Route::patch('/log/{id}', [\App\Http\Controllers\UsuarioController::class, 'update']);
-Route::post('/log', [\App\Http\Controllers\UsuarioController::class, 'store']);
-Route::delete('/log/{id}', [\App\Http\Controllers\UsuarioController::class, 'destroy']);
+Route::get('/missao/{id}/log', [\App\Http\Controllers\MissaoController::class, 'showLog']);
+Route::delete('/missao/log/{id}', [\App\Http\Controllers\MissaoController::class, 'destroyLog']);

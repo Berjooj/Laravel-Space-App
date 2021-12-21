@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Validator;
 
 class UsuarioController extends Controller {
     public function store(Request $request) {
-        dd($request);
         $validator = Validator::make(\request()->all(), [
             'nome' => 'required|string|max:255',
             'is_astronauta' => 'boolean',

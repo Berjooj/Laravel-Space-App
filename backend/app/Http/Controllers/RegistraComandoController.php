@@ -19,14 +19,21 @@ class RegistraComandoController extends Controller {
         if ($validator->fails())
             return response()->json('Dados incorretos', 422);
 
-
         $validated = $validator->safe()->only(['comando', 'missao_id']);
 
-        $missao = Missao::findOrFail($validated['missao_id']);
+        try {
+            $missao = Missao::findOrFail($validated['missao_id']);
+        } catch (\Throwable $exception) {
+            return response()->json('Missão não encontrada!', 404);
+        }
+
         $comando = Comando::where('comando', '=', $validated['comando'])->first();
+        if (!isset($comando->id))
+            return response()->json('Comando não encontrado!', 404);
 
         $resposta = $missao->registraComando($comando);
 
         Log::salvaLog($missao->id, $comando->label . " -> " . $resposta);
+        return response()->json($resposta);
     }
 }
