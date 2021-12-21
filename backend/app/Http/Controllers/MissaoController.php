@@ -131,7 +131,7 @@ class MissaoController extends Controller {
 
     public function showLog($id) {
         try {
-            return response()->json(['log' => Missao::findOrFail($id)->log()]);
+            return response()->json(['log' => Log::where('missao_id', '=', $id)->get()]);
         } catch (\Throwable $exception) {
             return response()->json('Nada encontrado!', 404);
         }
