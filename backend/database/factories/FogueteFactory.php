@@ -18,10 +18,10 @@ class FogueteFactory extends Factory {
 
         return [
             'nome' => "Foguete " . $faker->lastName(),
-            'combustivel_capacidade' => $faker->numberBetween(10, 500),
-            'combustivel_atual' => $faker->numberBetween(10, 500),
-            'suprimentos_capacidade' => $faker->numberBetween(10, 500),
-            'suprimentos_atual' => $faker->numberBetween(10, 500),
+            'combustivel_capacidade' => $faker->numberBetween(10, 250),
+            'combustivel_atual' => $faker->numberBetween(10, 250),
+            'suprimentos_capacidade' => $faker->numberBetween(10, 250),
+            'suprimentos_atual' => $faker->numberBetween(10, 250),
             'em_voo' => false,
         ];
     }
